@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "Lichess Keyboard Multiple Premove",
+  "description": "Allows you to make multiple premove moves on Lichess using the keyboard.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://lichess.org/*"],
+      "js": ["main.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "./js/background.js",
+    "host_permissions": ["<all_urls>"]
+  },
+  "permissions": ["tabs", "debugger"]
+}
